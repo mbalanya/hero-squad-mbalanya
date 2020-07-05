@@ -1,3 +1,4 @@
+import models.Hero;
 import models.Squad;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
@@ -38,7 +39,8 @@ public class App {
             String heroAbility = request.queryParams("heroAbility");
             String heroWeakness = request.queryParams("heroWeakness");
             Hero newHero = new Hero(heroName, heroAge, heroAbility, heroWeakness);
-            return new ModelAndView(model, "index.hbs");
+            response.redirect("/");
+            return null;
         }, new HandlebarsTemplateEngine());
     }
 }

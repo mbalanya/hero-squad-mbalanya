@@ -37,7 +37,7 @@
                 <i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add a <strong>NEW HERO</strong> Here and Specify His/Her Abilities.
             </div>
             <div class="panel-footer">
-                <form action="/newHero" method="post" name="heroForm">
+                <form action="/createHero" method="post" name="heroForm">
                     <input type="text" class="form-control mb0" placeholder="Enter Hero name..." name="heroName" autocomplete="off"><br>
                     <p class="label">Enter Hero's Age:</p>
                     <input type="number" name="heroAge" class="form-control mb0" placeholder="Enter Hero's Age">
@@ -70,13 +70,13 @@
                         <option value="Women">Women</option>
                         <option value="Fire">Fire</option>
                     </select>
-                    <select name="heroSquad" class="form-control select2 mt15 mb0" data-placeholder="Assign to Squad">
-                    {{#if "squadHero"}}
+                    <!--<select name="heroSquad" class="form-control select2 mt15 mb0" data-placeholder="Assign to Squad">
+                    {{#if squadHero}}
                         <option label="Assign to Squad"></option>
                     {{else}}
                         <option label="No Squads Created"></option>
                     {{/if}}
-                    </select><br>
+                    </select>--><br>
                     <button class="btn btn-success btn-xs" type="submit"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add Character</button>
                 </form>
             </div>
@@ -97,24 +97,29 @@
                         {{/each}}
                     </ul>
                 {{else}}
-                    <span class="label label-warning">No Heroes Added Yet!</span>
+                    <span class="label label-warning">No Squads Added Yet!</span>
                 {{/if}}
             </div>
         </div>
         <div class="panel panel-default squads">
             <div class="panel-body">
-                <h3>Squads</h3>
+                <h3>Heros</h3>
                 <hr>
-                {{#if "squadHero"}}
+                {{#if heros}}
                     <ul>
+                        {{#each heros}}
                         <li class="mt10">
-                            <small class="pull-right"><strong>Max Size: </strong></small>
-                            <small class="pull-right"><strong>Current Size: </strong></small>
-                            <h4 class="squadName"></h4>
-                            <small>Cause: <strong></strong></small>
-                            <small><i class="fa fa-angle-right" aria-hidden="true">&nbsp;&nbsp;<a href="">View Squad Members</a></i></small>
+                            <h4 class="squadName">{{heroName}}</h4>
+                            <small class="pull-right"><strong>Hero Age: {{heroAge}}</strong></small>
+                            <small class="pull-right"><strong>Special Ability: {{heroAbility}} </strong></small>
+                            <small class="pull-right"><strong>Weakness: {{heroWeakness}} </strong></small>
+                            <!--<small>Cause: <strong></strong></small>
+                            <small><i class="fa fa-angle-right" aria-hidden="true">&nbsp;&nbsp;<a href="">View Squad Members</a></i></small>-->
                         </li>
+                        {{/each}}
                     </ul>
+                {{else}}
+                    <span class="label label-warning">No Heroes Added Yet!</span>
                 {{/if}}
             </div>
         </div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="panel panel-default heroes">
+        <div class="panel-body">
+            <h3>Squads</h3>
+            <hr>
+            {{#if squads}}
+                <ul>
+                    {{#each squads}}
+                        <li>
+                            <h4 class="squadName"> {{squadName}} </h4>
+                            <small><a href="">View Heroes</a></small>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <span class="label label-warning">No Squads Added Yet!</span>
+            {{/if}}
+        </div>
+    </div>
+</div>

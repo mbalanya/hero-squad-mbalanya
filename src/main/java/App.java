@@ -5,6 +5,7 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.get;
@@ -44,6 +45,15 @@ public class App {
             newSquad.addHeroToSquad(newHero);
             response.redirect("/");
             return null;
+        }, new HandlebarsTemplateEngine());
+
+        get("/squad/:id", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            Squad thisSquad = Squad.findSquad(Integer.parseInt(request.params("id")));
+            List<Hero> squadHero = thisSquad.getSquadHeros();
+            model.put("thisSquad", thisSquad);
+            model.put("squadHero",squadHero)
+            return new ModelAndView(model, "heros.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }

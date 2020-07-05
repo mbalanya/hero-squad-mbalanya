@@ -13,5 +13,15 @@ public class Squad {
         wholeSquad.add(this);
     }
 
+    public String getSquadName() {
+        return squadName;
+    }
 
+    public static ArrayList<Squad> getWholeSquad() {
+        return wholeSquad;
+    }
+
+    public int getId() {
+        return id;
+    }
 }

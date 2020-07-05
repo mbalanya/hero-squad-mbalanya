@@ -1,3 +1,4 @@
+import models.Squad;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -5,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static spark.Spark.get;
+import static spark.Spark.post;
 import static spark.Spark.staticFileLocation;
 
 public class App {
@@ -13,7 +15,16 @@ public class App {
 
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
+
             return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        post("/createSquad", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            String squadName = request.queryParams("squadName");
+            Squad newSquad = new Squad(squadName);
+            response.redirect("/index.hbs");
+            return null;
         }, new HandlebarsTemplateEngine());
     }
 }

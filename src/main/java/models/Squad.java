@@ -6,12 +6,11 @@ import java.util.List;
 public class Squad {
     private String squadName;
     private static ArrayList<Squad> wholeSquad = new ArrayList<>();
-    private int id;
+    private int id = wholeSquad.size();
     private List<Hero> squadHeros;
 
     public Squad(String squadName){
         this.squadName =squadName;
-        this.id = wholeSquad.size();
         wholeSquad.add(this);
         this.squadHeros = new ArrayList<Hero>();
     }

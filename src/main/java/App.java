@@ -39,20 +39,20 @@ public class App {
             int heroAge = Integer.parseInt(request.queryParams("heroAge"));
             String heroAbility = request.queryParams("heroAbility");
             String heroWeakness = request.queryParams("heroWeakness");
+            Hero newHero = new Hero(heroName, heroAge, heroAbility, heroWeakness);
             int heroSquad = Integer.parseInt(request.queryParams("heroSquad"));
             Squad newSquad = Squad.findSquad(heroSquad);
-            Hero newHero = new Hero(heroName, heroAge, heroAbility, heroWeakness);
             newSquad.addHeroToSquad(newHero);
             response.redirect("/");
             return null;
         }, new HandlebarsTemplateEngine());
 
-        get("/squad/:id", (request, response) -> {
+        get("/heros/:id", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             Squad thisSquad = Squad.findSquad(Integer.parseInt(request.params("id")));
             List<Hero> squadHero = thisSquad.getSquadHeros();
             model.put("thisSquad", thisSquad);
-            model.put("squadHero",squadHero)
+            model.put("squadHero",squadHero);
             return new ModelAndView(model, "heros.hbs");
         }, new HandlebarsTemplateEngine());
     }

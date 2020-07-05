@@ -1,14 +1,17 @@
+{{#partial "content"}}
+
 <div class="container">
     <div class="panel panel-default heroes">
         <div class="panel-body">
-            <h3>Squads</h3>
+            <h3>{{thisSquad.squadName}}</h3>
             <hr>
-            {{#if squads}}
+            {{#if squadHero}}
                 <ul>
-                    {{#each squads}}
+                    {{#each squadHero}}
                         <li>
-                            <h4 class="squadName"> {{squadName}} </h4>
-                            <small><a href="">View Heroes</a></small>
+                            <h4 class="squadName"> {{heroName}} | {{heroAge}}</h4>
+                            <small>{{heroAbility}}</small>
+                            <small>{{heroWeakness}}</small>
                         </li>
                     {{/each}}
                 </ul>
@@ -18,3 +21,6 @@
         </div>
     </div>
 </div>
+
+{{/partial}}
+{{> layout.hbs}}

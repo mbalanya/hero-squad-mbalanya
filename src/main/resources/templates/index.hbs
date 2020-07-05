@@ -14,9 +14,9 @@
             <div class="panel-footer">
                 <form action="/createSquad" method="post" name="squadForm">
                     <input type="text" class="form-control mb0" placeholder="EnterSquad's Name..." name="squadName" autocomplete="off"><br>
-                    <p class="label">Squad's Max Size:</p>
-                    <input type="number" class="form-control mb0" placeholder="Max Size..." name="squadSize">
-                    <select name="squad_cause" data-placeholder="Squad's Cause" class="form-control select2 mt15 mb0">
+                    <!--<p class="label">Squad's Max Size:</p>
+                    <input type="number" class="form-control mb0" placeholder="Max Size..." name="squadSize">-->
+                    <!--<select name="squad_cause" data-placeholder="Squad's Cause" class="form-control select2 mt15 mb0">
                         <option label="Squad's Cause"></option>
                         <option value="Track Hackers">Track Hackers</option>
                         <option value="Prevent Aliens">Prevent Aliens</option>
@@ -27,7 +27,7 @@
                         <option value="Drive Fast">Drive Fast</option>
                         <option value="Fight Anti-Heros">Fight Anti-Heros</option>
                         <option value="Live Fast, Die Young">Live Fast. Die Young</option>
-                    </select>
+                    </select>-->
                     <br><button class="btn btn-success btn-xs"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Create Squad</button>
                 </form>
             </div>
@@ -37,11 +37,11 @@
                 <i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add a <strong>NEW HERO</strong> Here and Specify His/Her Abilities.
             </div>
             <div class="panel-footer">
-                <form action="/createHero" method="post" name="heroForm">
+                <form action="/createHero" method="post" name="createHero">
                     <input type="text" class="form-control mb0" placeholder="Enter Hero name..." name="heroName" autocomplete="off"><br>
-                    <p class="label">Enter Hero's Age:</p>
+                    <label>Enter Hero's Age:</label>
                     <input type="number" name="heroAge" class="form-control mb0" placeholder="Enter Hero's Age">
-                    <select name="heroAbility" data-placeholder="Choose Special Ability" id="" class="form-control select2 mt15 mb0">
+                    <select name="heroAbility" data-placeholder="Choose Special Ability" class="form-control select2 mt15 mb0">
                         <option label="Choose Special Ability"></option>
                         <option value="Superhuman Strength">Superhuman Strength</option>
                         <option value="Camouflage">Camouflage</option>
@@ -95,7 +95,7 @@
                         {{#each squads}}
                         <li>
                             <h4 class="squadName"> {{squadName}} </h4>
-                            <small><a href="/squad/{{id}}">View Heroes</a></small>
+                            <small><a href="/heros/{{id}}">View Heroes</a></small>
                         </li>
                         {{/each}}
                     </ul>

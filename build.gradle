@@ -1,12 +1,21 @@
 plugins {
     id 'java'
     id 'application'
+    id 'jacoco'
 }
 
 group 'com.chalookoba'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination file("${buildDir}/jacocoHtml")
+    }
+}
 
 mainClassName = 'App'
 

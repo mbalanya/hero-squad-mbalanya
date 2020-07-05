@@ -85,14 +85,16 @@
     <div class="col-md-8">
         <div class="panel panel-default heroes">
             <div class="panel-body">
-                <h3>Heroes</h3>
+                <h3>Squads</h3>
                 <hr>
-                {{#if "heroSquad"}}
+                {{#if squads}}
                     <ul>
+                        {{#each squads}}
                         <li>
-                            <h4 class="heroName"></h4>
-                            <small><strong class="text-success">Special Ability:</strong><strong class="text-danger">Weakness:</strong></small>
+                            <h4 class="squadName"> {{squadName}} </h4>
+                            <small><a href="">View Heroes</a></small>
                         </li>
+                        {{/each}}
                     </ul>
                 {{else}}
                     <span class="label label-warning">No Heroes Added Yet!</span>

@@ -38,7 +38,10 @@ public class App {
             int heroAge = Integer.parseInt(request.queryParams("heroAge"));
             String heroAbility = request.queryParams("heroAbility");
             String heroWeakness = request.queryParams("heroWeakness");
+            int heroSquad = Integer.parseInt(request.queryParams("heroSquad"));
+            Squad newSquad = Squad.findSquad(heroSquad);
             Hero newHero = new Hero(heroName, heroAge, heroAbility, heroWeakness);
+            newSquad.addHeroToSquad(newHero);
             response.redirect("/");
             return null;
         }, new HandlebarsTemplateEngine());

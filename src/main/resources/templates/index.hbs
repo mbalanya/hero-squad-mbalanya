@@ -70,13 +70,16 @@
                         <option value="Women">Women</option>
                         <option value="Fire">Fire</option>
                     </select>
-                    <!--<select name="heroSquad" class="form-control select2 mt15 mb0" data-placeholder="Assign to Squad">
-                    {{#if squadHero}}
+                    <select name="heroSquad" class="form-control select2 mt15 mb0" data-placeholder="Assign to Squad">
+                    {{#if squads}}
                         <option label="Assign to Squad"></option>
+                        {{#each squads}}
+                            <option value="{{id}}">{{squadName}}</option>
+                        {{/each}}
                     {{else}}
                         <option label="No Squads Created"></option>
                     {{/if}}
-                    </select>--><br>
+                    </select><br>
                     <button class="btn btn-success btn-xs" type="submit"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add Character</button>
                 </form>
             </div>

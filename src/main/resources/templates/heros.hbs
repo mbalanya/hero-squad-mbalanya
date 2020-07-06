@@ -1,17 +1,17 @@
 {{#partial "content"}}
 
-<div class="container">
-    <div class="panel panel-default heroes">
-        <div class="panel-body">
-            <h3>{{thisSquad.squadName}}</h3>
+<div class="row">
+    <!--<div class="panel panel-default heroes">-->
+        <div class="col-md-7">
+            <h2>{{thisSquad.squadName}}</h2>
             <hr>
             {{#if squadHero}}
                 <ul>
                     {{#each squadHero}}
                         <li>
-                            <h4 class="squadName"> {{heroName}} | {{heroAge}}</h4>
-                            <small>{{heroAbility}}</small>
-                            <small>{{heroWeakness}}</small>
+                            <h4 class="squadName">Hero Name: {{heroName}} | <small> Age: {{heroAge}}</small></h4>
+                            <small>Ability: {{heroAbility}}</small><br>
+                            <small>Weakness: {{heroWeakness}}</small>
                         </li>
                     {{/each}}
                 </ul>
@@ -19,7 +19,7 @@
                 <span class="label label-warning">No Squads Added Yet!</span>
             {{/if}}
         </div>
-    </div>
+    <!--</div>-->
 </div>
 
 {{/partial}}

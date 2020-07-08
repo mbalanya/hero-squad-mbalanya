@@ -3,6 +3,7 @@ package models;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+/*import org.junit.*;*/
 
 import java.util.ArrayList;
 
@@ -20,7 +21,7 @@ public class SquadTest {
         Squad squad = new Squad("Rangers");
         Squad squadId = new Squad("Rangers");
         assertEquals("Rangers", squad.getSquadName());
-        assertEquals(1,squadId.getId());
+        assertEquals(2,squadId.getId());
     }
 
 

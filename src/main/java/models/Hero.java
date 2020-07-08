@@ -29,5 +29,5 @@ public class Hero {
 
     public static ArrayList<Hero> getAllHeros() { return allHeros; }
 
-    public int getId() { return id; }
+    public int getId() { return id + 1; }
 }

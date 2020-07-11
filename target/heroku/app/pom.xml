@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.chalookoba</groupId>
-    <artifactId>Hero-squad</artifactId>
+    <artifactId>Hero-Squad</artifactId>
     <version>1.0</version>
 
     <dependencies>
@@ -21,7 +21,7 @@
             <version>2.5.5</version>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>9.4.1208</version>
@@ -30,7 +30,7 @@
             <groupId>org.sql2o</groupId>
             <artifactId>sql2o</artifactId>
             <version>1.5.4</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

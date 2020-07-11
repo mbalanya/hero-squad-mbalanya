@@ -21,7 +21,7 @@ public class SquadTest {
         Squad squad = new Squad("Rangers");
         Squad squadId = new Squad("Rangers");
         assertEquals("Rangers", squad.getSquadName());
-        assertEquals(2,squadId.getId());
+        assertEquals(1,squadId.getId());
     }
 
 

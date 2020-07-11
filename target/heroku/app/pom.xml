@@ -78,9 +78,10 @@
                 <configuration>
                     <jdkVersion>1.8</jdkVersion>
                     <!-- Change this to YOUR application name! -->
-                    <appName>herosquads-app</appName>
+                    <appName>hero-squad-mbalanya</appName>
                     <processTypes>
-                        <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
+                        <!--<web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>-->
+                        <web>java -jar target/Hero-Squad-1.0-jar-with-dependencies.jar</web>
                     </processTypes>
                 </configuration>
             </plugin>

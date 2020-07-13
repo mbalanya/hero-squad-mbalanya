@@ -13,9 +13,9 @@ import static spark.Spark.post;
 import static spark.Spark.staticFileLocation;
 
 public class App {
-    private static void port(int herokuAssignedPort) {
+    public static void port(int herokuAssignedPort) {
     }
-    private static int getHerokuAssignedPort() {
+    public static int getHerokuAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();
         if (processBuilder.environment().get("PORT") != null) {
             return Integer.parseInt(processBuilder.environment().get("PORT"));
